@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "Abstract technological environmental visualization",
+      "imageUrl": "https://picsum.photos/seed/ethos1/1200/800",
+      "imageHint": "environmental technology"
+    },
+    {
+      "id": "profile-user-1",
+      "description": "User profile avatar",
+      "imageUrl": "https://picsum.photos/seed/user1/100/100",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "profile-user-2",
+      "description": "User profile avatar",
+      "imageUrl": "https://picsum.photos/seed/user2/100/100",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "profile-user-3",
+      "description": "User profile avatar",
+      "imageUrl": "https://picsum.photos/seed/user3/100/100",
+      "imageHint": "person portrait"
+    }
+  ]
+}
