@@ -1,0 +1,58 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Extended user information and gamification data.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "level": { "type": "number", "description": "RPG Level" },
+        "xp": { "type": "number", "description": "Current Experience Points" },
+        "streak": { "type": "number" },
+        "totalCO2SavedKg": { "type": "number" },
+        "campusId": { "type": "string" },
+        "teamId": { "type": "string" },
+        "rank": { "type": "string", "enum": ["Eco-Novice", "Carbon-Neutralizer", "Gaia-Guardian", "Planet-Pioneer"] }
+      },
+      "required": ["userId", "displayName"]
+    },
+    "Prediction": {
+      "title": "AI Carbon Twin Prediction",
+      "description": "Simulated future footprint data.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "forecasts": {
+          "type": "object",
+          "properties": {
+            "oneMonth": { "type": "number" },
+            "sixMonths": { "type": "number" },
+            "oneYear": { "type": "number" }
+          }
+        },
+        "simulationScenario": { "type": "string" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["google.com"]
+  },
+  "firestore": {
+    "/userProfiles/{userId}": {
+      "schema": "UserProfile",
+      "description": "User account and gamification data."
+    },
+    "/footprints": {
+      "schema": "Footprint",
+      "description": "Collection of all user footprint assessments."
+    },
+    "/predictions": {
+      "schema": "Prediction",
+      "description": "AI-generated future projections."
+    }
+  }
+}
